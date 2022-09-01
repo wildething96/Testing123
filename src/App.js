@@ -24,7 +24,10 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/company-maintenance" element={<CompanyMaintenance />} />
           <Route path="/main-menu" element={<MainMenu />} />
-          <Route path="/home" element={<Dashboard_b />} />
+          <Route
+            path="https://thankful-mud-0d85e2803.1.azurestaticapps.net//home"
+            element={<Dashboard_b />}
+          />
         </Routes>
       </Router>
     </div>
