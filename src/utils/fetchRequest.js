@@ -38,22 +38,22 @@ export const getAll = async () => {
   }
 };
 
-export const singIn = async (email = "michale9@ethereal.email", password = "Password5!") => {
+export const singIn = async (
+  email = "michale9@ethereal.email",
+  password = "Password5!"
+) => {
   try {
-    const response = await fetch(
-      `${process.env.REACT_APP_REST_API}create-comp`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        mode: "cors",
-      }
-    );
+    const response = await fetch(`https://langdon.azure-api.net/v1/api/Login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+      mode: "cors",
+    });
     const data = await response.json();
     console.log(data);
   } catch (error) {
