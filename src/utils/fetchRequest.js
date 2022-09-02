@@ -48,7 +48,8 @@ export const singIn = async (
       {
         method: "POST",
         headers: {
-          "Access-Control-Allow-Headers": "Authorization",
+          "Access-Control-Allow-Origin":
+            "https://langdon.azure-api.net/v1/api/Authentication",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
