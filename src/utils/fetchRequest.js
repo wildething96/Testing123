@@ -49,6 +49,7 @@ export const singIn = async (
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
           email: email,
