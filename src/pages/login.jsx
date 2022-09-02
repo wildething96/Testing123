@@ -10,7 +10,7 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await singIn();
+    singIn();
     // console.log(username + password);
   };
 
