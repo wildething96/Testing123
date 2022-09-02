@@ -8,9 +8,9 @@ export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    singIn();
+    await singIn();
     // console.log(username + password);
   };
 
