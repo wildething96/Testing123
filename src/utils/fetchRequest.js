@@ -43,17 +43,20 @@ export const singIn = async (
   password = "Password5!"
 ) => {
   try {
-    const response = await fetch(`https://langdon.azure-api.net/v1/api/Login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-      mode: "cors",
-    });
+    const response = await fetch(
+      `https://langdon.azure-api.net/v1/api/Authentication/Login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+        mode: "cors",
+      }
+    );
     const data = await response.json();
     console.log(data);
   } catch (error) {
