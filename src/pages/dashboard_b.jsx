@@ -8,7 +8,7 @@ import { currentPanels } from "../utils/currentPanels";
 import { Toggle } from "../components/toggle";
 import { Selection } from "../components/selection";
 // import { CgCloseO } from "./"
-// import "./styles/styles.css";
+import "./styles/styles.css";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 

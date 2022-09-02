@@ -2,13 +2,16 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 
+import { singIn } from "../utils/fetchRequest";
+
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username + password);
+    singIn();
+    // console.log(username + password);
   };
 
   return (
@@ -52,7 +55,7 @@ const Container = styled.div`
   background: darkgrey;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  
+
   button {
     cursor: pointer;
   }

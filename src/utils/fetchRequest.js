@@ -1,34 +1,62 @@
 export const postComp = async (compName, compCode) => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_REST_API}create-comp`, {
+  try {
+    const response = await fetch(
+      `${process.env.REACT_APP_REST_API}create-comp`,
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          compId : 0,
+          compId: 0,
           compName,
-          compCode
+          compCode,
         }),
         mode: "cors",
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-  export const getAll = async () => {
-    try {
-        const response = await fetch(`${process.env.REACT_APP_REST_API}get-all-comps`, {
-          method: "GET",
-        })
-        const data = await response.json();
-        console.log(data);
-        return data;
+export const getAll = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.REACT_APP_REST_API}get-all-comps`,
+      {
+        method: "GET",
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-    } catch (error) {
-      console.log(error);
-    }
-  };
+export const singIn = async (email = "michale9@ethereal.email", password = "Password5!") => {
+  try {
+    const response = await fetch(
+      `${process.env.REACT_APP_REST_API}create-comp`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+        mode: "cors",
+      }
+    );
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};

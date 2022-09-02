@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 
-// import { LineChart } from "./lineChart";
+import { LineChart } from "./lineChart";
 import { DecData } from "../utils/decData";
 
 export const Declarations = () => {
@@ -42,7 +42,7 @@ export const Declarations = () => {
           <div>0</div>
         </div>
       </Stats>
-      {/* <LineChart chartData={graphData} /> */}
+      <LineChart chartData={graphData} />
     </div>
   );
 };
