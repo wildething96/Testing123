@@ -55,7 +55,7 @@ export const singIn = async (
           email: email,
           password: password,
         }),
-        mode: "no-cors",
+        mode: "cors",
       }
     );
     const data = await response.json();
