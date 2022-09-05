@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 
-import { singIn } from "../utils/fetchRequest";
+import { getdata } from "../utils/fetchRequest";
+import { signIn2 } from "../utils/fetchRequest";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
@@ -10,8 +11,10 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    singIn();
     // console.log(username + password);
+    // getAll();
+    // await getdata();
+    await signIn2();
   };
 
   return (

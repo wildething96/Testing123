@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const postComp = async (compName, compCode) => {
   try {
     const response = await fetch(
@@ -25,7 +27,7 @@ export const postComp = async (compName, compCode) => {
 export const getAll = async () => {
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_REST_API}get-all-comps`,
+      `https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get`,
       {
         method: "GET",
       }
@@ -63,4 +65,29 @@ export const singIn = async (
   } catch (error) {
     console.log(error);
   }
+};
+
+export const signIn2 = async () => {
+  await axios
+    .post("https://langdon.azure-api.net/v1/api/Authentication/Login", {
+      email: "michale9@ethereal.email",
+      password: "Password5!",
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+export const getdata = async () => {
+  await axios
+    .get("https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get")
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };
