@@ -26,16 +26,13 @@ export const postComp = async (compName, compCode) => {
 
 export const getAll = async () => {
   try {
-    const response = await fetch(
-      `https://langdon.azure-api.net/v1/api/GetRequest/Get`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json; chartset = utf-8",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    const response = await fetch(`/GetRequest/Get`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; chartset = utf-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
     const data = await response.json();
     console.log(data);
     return data;
@@ -87,11 +84,7 @@ let config = {
 
 export const signIn2 = async () => {
   await axios
-    .post(
-      "https://langdon.azure-api.net/v1/api/Authentication/Login",
-      data,
-      config
-    )
+    .post("/Authentication/Login", data, config)
     .then(function (response) {
       console.log(response);
     })
