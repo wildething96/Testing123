@@ -99,7 +99,7 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("https://langdon.azure-api.net/api/GetRequest/Get")
+    .get("https://langdon.azure-api.net/api/GetRequest/Get", config)
     .then(function (response) {
       console.log(response.data);
     })
