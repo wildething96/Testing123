@@ -76,8 +76,8 @@ let data = {
 let config = {
   headers: {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+    // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+    // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
     "Content-Type": "application/json; chartset = utf-8",
   },
 };
@@ -95,10 +95,7 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get(
-      "https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get",
-      config
-    )
+    .get("/GetRequest/Get", config)
     .then(function (response) {
       console.log(response);
     })
