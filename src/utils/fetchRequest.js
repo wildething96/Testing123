@@ -86,7 +86,7 @@ export const signIn2 = async () => {
   await axios
     .post("/Authentication/Login", data, config)
     .then(function (response) {
-      console.log(response);
+      console.log(response.data);
     })
     .catch(function (error) {
       console.log(error);
@@ -97,7 +97,7 @@ export const getdata = async () => {
   await axios
     .get("/GetRequest/Get", config)
     .then(function (response) {
-      console.log(response);
+      console.log(response.data);
     })
     .catch(function (error) {
       console.log(error);
