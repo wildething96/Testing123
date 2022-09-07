@@ -79,6 +79,8 @@ let data = {
 let config = {
   headers: {
     "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
     "Content-Type": "application/json; chartset = utf-8",
   },
 };
@@ -88,7 +90,7 @@ export const signIn2 = async () => {
     .post(
       "https://langdon.azure-api.net/v1/api/Authentication/Login",
       data,
-      config,
+      config
     )
     .then(function (response) {
       console.log(response);
