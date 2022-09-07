@@ -85,7 +85,7 @@ let config = {
 export const signIn2 = async () => {
   await axios
     .post(
-      "https://langdon.azure-api.net/api/Authentication/Login",
+      "https://loginapi20220819095559.azurewebsites.net/Authentication/Login",
       data,
       config
     )
@@ -99,7 +99,10 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("https://langdon.azure-api.net/api/GetRequest/Get", config)
+    .get(
+      "https://loginapi20220819095559.azurewebsites.net/GetRequest/Get",
+      config
+    )
     .then(function (response) {
       console.log(response.data);
     })
