@@ -71,6 +71,11 @@ export const singIn = async (
   }
 };
 
+let data = {
+  email: "michale9@ethereal.email",
+  password: "Password5!",
+};
+
 let config = {
   headers: {
     "Access-Control-Allow-Origin": "*",
@@ -80,10 +85,15 @@ let config = {
 
 export const signIn2 = async () => {
   await axios
-    .post("https://langdon.azure-api.net/v1/api/Authentication/Login", config, {
-      email: "michale9@ethereal.email",
-      password: "Password5!",
-    })
+    .post(
+      "https://langdon.azure-api.net/v1/api/Authentication/Login",
+      data,
+      config,
+      {
+        email: "michale9@ethereal.email",
+        password: "Password5!",
+      }
+    )
     .then(function (response) {
       console.log(response);
     })
