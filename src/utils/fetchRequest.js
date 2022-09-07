@@ -80,7 +80,7 @@ let config = {
 
 export const signIn2 = async () => {
   await axios
-    .post("https://langdon.azure-api.net/v1/api/Authentication/Login", {
+    .post("https://langdon.azure-api.net/v1/api/Authentication/Login", config, {
       email: "michale9@ethereal.email",
       password: "Password5!",
     })
