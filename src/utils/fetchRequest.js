@@ -89,10 +89,6 @@ export const signIn2 = async () => {
       "https://langdon.azure-api.net/v1/api/Authentication/Login",
       data,
       config,
-      {
-        email: "michale9@ethereal.email",
-        password: "Password5!",
-      }
     )
     .then(function (response) {
       console.log(response);
