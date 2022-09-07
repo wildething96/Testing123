@@ -78,18 +78,14 @@ let config = {
     "Access-Control-Allow-Origin": "*",
     // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
     // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-    // "Content-Type": "application/json",
+    "Content-Type": "application/json",
     "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
   },
 };
 
 export const signIn2 = async () => {
   await axios
-    .post(
-      "https://langdon.azure-api.net/api/Authentication/Login",
-      data,
-      config
-    )
+    .post("/Authentication/Login", data, config)
     .then(function (response) {
       console.log(response.data);
     })
@@ -100,7 +96,7 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("https://langdon.azure-api.net/api/GetRequest/Get", config)
+    .get("/GetRequest/Get", config)
     .then(function (response) {
       console.log(response.data);
     })
