@@ -27,9 +27,13 @@ export const postComp = async (compName, compCode) => {
 export const getAll = async () => {
   try {
     const response = await fetch(
-      `https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get`,
+      `https://langdon.azure-api.net/v1/api/GetRequest/Get`,
       {
         method: "GET",
+        headers: {
+          "Content-Type": "application/json; chartset = utf-8",
+          "Access-Control-Allow-Origin": "*",
+        },
       }
     );
     const data = await response.json();
@@ -67,6 +71,13 @@ export const singIn = async (
   }
 };
 
+let config = {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json; chartset = utf-8",
+  },
+};
+
 export const signIn2 = async () => {
   await axios
     .post("https://langdon.azure-api.net/v1/api/Authentication/Login", {
@@ -83,7 +94,10 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get")
+    .get(
+      "https://loginapi20220819095559.azurewebsites.net/api/GetRequest/Get",
+      config
+    )
     .then(function (response) {
       console.log(response);
     })
