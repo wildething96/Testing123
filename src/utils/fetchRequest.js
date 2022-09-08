@@ -51,7 +51,7 @@ export const signIn = async (
 ) => {
   try {
     const response = await fetch(
-      `https://langdon.azure-api.net/api/Authentication/Login`,
+      `https://langdon.azure-api.net/v1/api/Authentication/Login`,
       {
         method: "POST",
         headers: {
