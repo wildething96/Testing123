@@ -30,11 +30,11 @@ export const getAll = async () => {
       `https://langdon.azure-api.net/api/GetRequest/Get`,
       {
         // method: "GET",
-        headers: {
-          // "Content-Type": "application/json",
-          // "Access-Control-Allow-Origin": "*",
-          "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-        },
+        // headers: {
+        //   // "Content-Type": "application/json",
+        //   // "Access-Control-Allow-Origin": "*",
+        //   "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+        // },
       }
     );
     const data = await response.json();
