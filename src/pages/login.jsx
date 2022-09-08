@@ -15,7 +15,7 @@ export const Login = () => {
     e.preventDefault();
     // getdata();
     getAll();
-    // signIn();
+    signIn();
   };
 
   return (
