@@ -26,7 +26,7 @@ export const postComp = async (compName, compCode) => {
 
 export const getAll = async () => {
   try {
-    const response = await fetch(`/api/GetRequest/Get`, {
+    const response = await fetch(`/GetRequest/Get`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json; chartset = utf-8",
@@ -47,7 +47,7 @@ export const singIn = async (
   password = "Password5!"
 ) => {
   try {
-    const response = await fetch(`/api/Authentication/Login`, {
+    const response = await fetch(`/Authentication/Login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ let config = {
 
 export const signIn2 = async () => {
   await axios
-    .post("/api/Authentication/Login", data, config)
+    .post("/Authentication/Login", data, config)
     .then(function (response) {
       console.log(response.data);
     })
@@ -95,7 +95,7 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("/api/GetRequest/Get", config)
+    .get("/GetRequest/Get", config)
     .then(function (response) {
       console.log(response.data);
     })
