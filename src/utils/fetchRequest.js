@@ -26,11 +26,12 @@ export const postComp = async (compName, compCode) => {
 
 export const getAll = async () => {
   try {
-    const response = await fetch(`/GetRequest/Get`, {
+    const response = await fetch(`/api/GetRequest/Get`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json; chartset = utf-8",
         "Access-Control-Allow-Origin": "*",
+        "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
       },
     });
     const data = await response.json();
@@ -46,21 +47,19 @@ export const singIn = async (
   password = "Password5!"
 ) => {
   try {
-    const response = await fetch(
-      `https://langdon.azure-api.net/v1/api/Authentication/Login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-        mode: "cors",
-      }
-    );
+    const response = await fetch(`/api/Authentication/Login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      mode: "cors",
+    });
     const data = await response.json();
     console.log(data);
   } catch (error) {
