@@ -50,19 +50,22 @@ export const singIn = async (
   password = "Password5!"
 ) => {
   try {
-    const response = await fetch(`/Authentication/Login`, {
-      // method: "POST",
-      headers: {
-        // "Content-Type": "application/json",
-        // "Access-Control-Allow-Origin": "*",
-        "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      mode: "cors",
-    });
+    const response = await fetch(
+      `https://langdon.azure-api.net/api/Authentication/Login&apiKey=c28abe027f5d468cbedef72310dc06ee`,
+      {
+        // method: "POST",
+        headers: {
+          // "Content-Type": "application/json",
+          // "Access-Control-Allow-Origin": "*",
+          "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+        mode: "cors",
+      }
+    );
     const data = await response.json();
     console.log(data);
   } catch (error) {
