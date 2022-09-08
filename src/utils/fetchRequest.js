@@ -27,9 +27,9 @@ export const postComp = async (compName, compCode) => {
 export const getAll = async () => {
   try {
     const response = await fetch(
-      `https://langdon.azure-api.net/api/GetRequest/Get`,
+      `https://langdon.azure-api.net/api/GetRequest/Get&apiKey=c28abe027f5d468cbedef72310dc06ee`,
       {
-        method: "GET",
+        // method: "GET",
         headers: {
           // "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "*",
