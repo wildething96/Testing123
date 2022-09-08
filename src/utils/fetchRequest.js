@@ -53,7 +53,7 @@ export const singIn = async (
     const response = await fetch(
       `https://langdon.azure-api.net/api/Authentication/Login`,
       {
-        // method: "POST",
+        method: "POST",
         headers: {
           // "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "*",
