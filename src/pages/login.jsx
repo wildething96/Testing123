@@ -14,7 +14,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     getdata();
-    signIn();
+    // signIn();
   };
 
   return (
