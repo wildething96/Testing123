@@ -55,15 +55,14 @@ export const singIn = async (
       {
         method: "POST",
         headers: {
-          // "Content-Type": "application/json",
-          // "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
           "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
         },
         body: JSON.stringify({
           email: email,
           password: password,
         }),
-        mode: "cors",
       }
     );
     const data = await response.json();
