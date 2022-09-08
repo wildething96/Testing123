@@ -15,10 +15,9 @@ export const Login = () => {
     e.preventDefault();
     // console.log(username + password);
     await getAll();
-    // getdata();
-    await signIn();
+    await getdata();
+    getdata();
     getAll();
-    signIn();
   };
 
   return (

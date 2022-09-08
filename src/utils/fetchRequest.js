@@ -26,7 +26,7 @@ export const postComp = async (compName, compCode) => {
 
 export const getAll = async () => {
   try {
-    const response = await fetch(`/GetRequest/Get`, {
+    const response = await fetch(`/Get`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json; chartset = utf-8",
@@ -95,7 +95,7 @@ export const signIn2 = async () => {
 
 export const getdata = async () => {
   await axios
-    .get("/GetRequest/Get", config)
+    .get("/Get", config)
     .then(function (response) {
       console.log(response.data);
     })
