@@ -45,7 +45,7 @@ export const getAll = async () => {
   }
 };
 
-export const singIn = async (
+export const signIn = async (
   email = "michale9@ethereal.email",
   password = "Password5!"
 ) => {
@@ -53,7 +53,7 @@ export const singIn = async (
     const response = await fetch(
       `https://langdon.azure-api.net/api/Authentication/Login`,
       {
-        // method: "POST",
+        method: "POST",
         headers: {
           // "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "*",

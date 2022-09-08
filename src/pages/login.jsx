@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { getAll } from "../utils/fetchRequest";
 // import { getdata } from "../utils/fetchRequest";
 // import { signIn2 } from "../utils/fetchRequest";
-import { singIn } from "../utils/fetchRequest";
+import { signIn } from "../utils/fetchRequest";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,7 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // getAll();
-    singIn();
+    signIn();
   };
 
   return (
