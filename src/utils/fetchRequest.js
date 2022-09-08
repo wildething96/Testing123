@@ -29,7 +29,7 @@ export const getAll = async () => {
     const response = await fetch(
       `https://langdon.azure-api.net/api/GetRequest/Get`,
       {
-        method: "GET",
+        // method: "GET",
         headers: {
           // "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "*",
