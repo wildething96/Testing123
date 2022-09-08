@@ -85,7 +85,11 @@ let config = {
 
 export const signIn2 = async () => {
   await axios
-    .post("https://langdon.azure-api.net/api/Authentication/Login", data, config)
+    .post(
+      "https://langdon.azure-api.net/api/Authentication/Login",
+      data,
+      config
+    )
     .then(function (response) {
       console.log(response.data);
     })
