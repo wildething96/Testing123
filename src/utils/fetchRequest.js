@@ -31,8 +31,8 @@ export const getAll = async () => {
       {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+          // "Content-Type": "application/json",
+          // "Access-Control-Allow-Origin": "*",
           "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
         },
       }
