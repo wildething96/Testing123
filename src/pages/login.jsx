@@ -14,10 +14,11 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log(username + password);
-    await getAll();
-    await getdata();
+    // await getAll();
+    // await getdata();
     getdata();
-    getAll();
+    signIn();
+    // getAll();
   };
 
   return (

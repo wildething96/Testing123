@@ -27,7 +27,7 @@ export const postComp = async (compName, compCode) => {
 export const getAll = async () => {
   try {
     const response = await fetch(
-      `https://langdon.azure-api.net/api/GetRequest/Get`,
+      `https://langdon.azure-api.net/api/GetRequest/Get&apiKey=c28abe027f5d468cbedef72310dc06ee`,
       {
         // method: "GET",
         headers: {
@@ -51,10 +51,10 @@ export const singIn = async (
 ) => {
   try {
     const response = await fetch(`/Authentication/Login`, {
-      method: "POST",
+      // method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
+        // "Content-Type": "application/json",
+        // "Access-Control-Allow-Origin": "*",
         "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
       },
       body: JSON.stringify({
