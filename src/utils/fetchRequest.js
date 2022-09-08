@@ -55,10 +55,11 @@ export const signIn = async (
       {
         method: "POST",
         headers: {
-          // "Content-Type": "application/json",
+          "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "*",
           "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
         },
+        mode: "cors",
         body: JSON.stringify({
           email: email,
           password: password,
