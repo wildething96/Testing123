@@ -45,33 +45,54 @@ export const getAll = async () => {
   }
 };
 
-export const signIn = async (
-  email = "michale9@ethereal.email",
-  password = "Password5!"
-) => {
-  try {
-    const response = await fetch(
-      `https://langdon.azure-api.net/v1/api/Authentication/Login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-        },
-        mode: "no-cors",
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      }
-    );
-    const data = await response;
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
+const requestOptions = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Access-Control-Allow-Origin": "*",
+    "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+  },
+  body: JSON.stringify({
+    email: "michale9@ethereal.email",
+    password: "Password5!",
+  }),
+  // mode: "no-cors",
 };
+
+export const signIn = async () => {
+  await fetch(
+    "https://loginapi20220819095559.azurewebsites.net/api/Authentication/Login",
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+};
+//   email = "michale9@ethereal.email",
+//   password = "Password5!"
+// ) => {
+//   try {
+//     const response = await fetch(
+//       `https://langdon.azure-api.net/v1/api/Authentication/Login`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           // "Access-Control-Allow-Origin": "*",
+//           // "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+//         },
+//         // mode: "no-cors",
+//         body: JSON.stringify({
+//           email: email,
+//           password: password,
+//         }),
+//       }
+//     );
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // let data = {
 //   email: "michale9@ethereal.email",
