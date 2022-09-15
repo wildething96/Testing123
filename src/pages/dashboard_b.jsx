@@ -78,6 +78,7 @@ export const Dashboard_b = () => {
   };
   return (
     <SRoot locked={lock}>
+      {" "}
       <button onClick={() => setPanelSelection(!panelSelection)}>
         Add Panel +
       </button>

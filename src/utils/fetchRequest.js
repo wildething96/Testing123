@@ -45,27 +45,28 @@ export const getAll = async () => {
   }
 };
 
-const requestOptions = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json; charset=utf-8",
-    "Access-Control-Allow-Origin": "*",
-    "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-  },
-  body: JSON.stringify({
-    email: "michale9@ethereal.email",
-    password: "Password5!",
-  }),
-  // mode: "no-cors",
-};
-
-export const signIn = async () => {
+export const signIn = async (username, password) => {
+  console.log(username, password);
   await fetch(
     "https://loginapi20220819095559.azurewebsites.net/api/Authentication/Login",
-    requestOptions
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        // "Access-Control-Allow-Origin": "*",
+        "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+      },
+      body: JSON.stringify({
+        email: username,
+        password,
+        // email: "michale9@ethereal.email",
+        // password: "Password5!",
+      }),
+    }
   )
     .then((response) => response.json())
     .then((data) => console.log(data));
+  // console.log(username, password);
 };
 //   email = "michale9@ethereal.email",
 //   password = "Password5!"
@@ -99,26 +100,28 @@ export const signIn = async () => {
 //   password: "Password5!",
 // };
 
-// let config = {
-//   headers: {
-//     "Access-Control-Allow-Origin": "*",
-//     "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-//     "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-//     "Content-Type": "application/json",
-//     "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-//   },
-// };
+let config = {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+    "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
+  },
+};
 
-// export const signIn2 = async () => {
-//   await axios
-//     .post("/Authentication/Login", data, config)
-//     .then(function (response) {
-//       console.log(response.data);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-// };
+export const signIn2 = async (username, password) => {
+  await axios
+    .post(
+      "https://loginapi20220819095559.azurewebsites.net/api/Authentication/Login",
+      { email: username, password },
+      config
+    )
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
 
 // export const getdata = async () => {
 //   await axios

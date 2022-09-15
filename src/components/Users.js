@@ -1,16 +1,16 @@
 import { useRef, useState, useEffect } from "react";
-import useAuth from "../hooks/useAuth";
+import AuthContext from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import axios from "../api/axios";
-const LOGIN_URL = "/api/Authentication/Login";
+const LOGIN_URL = "/auth";
 
-export const Login = () => {
-  const { setAuth } = useAuth();
+const Login = () => {
+  const { setAuth } = AuthContext();
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/home";
+  const from = location.state?.from?.pathname || "/";
 
   const userRef = useRef();
   const errRef = useRef();
@@ -33,13 +33,9 @@ export const Login = () => {
     try {
       const response = await axios.post(
         LOGIN_URL,
-        JSON.stringify({ email: user, password: pwd }),
+        JSON.stringify({ user, pwd }),
         {
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "Access-Control-Allow-Origin": "*",
-            "Ocp-Apim-Subscription-Key": "c28abe027f5d468cbedef72310dc06ee",
-          },
+          headers: { "Content-Type": "application/json" },
           withCredentials: true,
         }
       );
@@ -54,7 +50,6 @@ export const Login = () => {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
-        console.log(err);
       } else if (err.response?.status === 400) {
         setErrMsg("Missing Username or Password");
       } else if (err.response?.status === 401) {
@@ -79,7 +74,7 @@ export const Login = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
-          type="email"
+          type="text"
           id="username"
           ref={userRef}
           autoComplete="off"
@@ -102,9 +97,11 @@ export const Login = () => {
         Need an Account?
         <br />
         <span className="line">
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/register">Sign Up</Link>
         </span>
       </p>
     </section>
   );
 };
+
+export default Login;
